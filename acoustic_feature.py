@@ -1,3 +1,6 @@
+from ast import AnnAssign
+import numpy as np
+duration_linguistic_dim = np.zeros(10, dtype=np.float64)
 for ty in ["duration", "acoustic"]:
     for phase in ["train", "test"]:
         train = phase == "train"

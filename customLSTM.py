@@ -1,5 +1,5 @@
 class MYLSTM(nn.Module):
-    def __init__(self, D_in, H, D_out, num_layers=1, bidirectional=false):
+    def __init__(self, D_in, H, D_out, num_layers=1, bidirectional=False):
         super(MYLSTM, self).__init__()
         self.hidden_dim = H
         self.num_layers = num_layers
