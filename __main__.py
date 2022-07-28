@@ -9,6 +9,7 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, LSTM, Conv1D
 from tensorflow.keras.activations import sigmoid
 from scipy.io import wavfile
+from tensorflow.keras.layers import Layers as Layer
 
 mgc_dim = 180
 lf0_dim = 3

@@ -1,3 +1,4 @@
+from tensorflow.keras.layers import Dense, LSTM, Conv1D
 def train_lstm(model, optimizer, X, Y, X_min, X_max, Y_mean, Y_scale,
           utt_lengths, cache_size=1000):
     if use_cuda:
@@ -8,12 +9,12 @@ def train_lstm(model, optimizer, X, Y, X_min, X_max, Y_mean, Y_scale,
     train_lengths, test_lengths = utt_lengths["train"], utt_lengths["test"]
 
     # Sequence-wise train loader
-    X_train_cache_dataset = MemoryCacheDataset(X_train, cache_size) // here it should change
-    Y_train_cache_dataset = MemoryCacheDataset(Y_train, cache_size) // here it should change 
+    X_train_cache_dataset = LSTM(X_train, cache_size) # here it should change
+    Y_train_cache_dataset = LSTM(Y_train, cache_size) # here it should change 
     train_dataset = PyTorchDataset(X_train_cache_dataset, Y_train_cache_dataset, train_lengths,
                                   X_min, X_max, Y_mean, Y_scale)
     train_loader = data_utils.DataLoader(
-        train_dataset, batch_size=batch_size, num_workers=n_workers, shuffle=True)
+        train_dataset, batch_size= batch_size, num_workers= n_workers, shuffle=True)
 
     # Sequence-wise test loader
     X_test_cache_dataset = MemoryCacheDataset(X_test, cache_size)
