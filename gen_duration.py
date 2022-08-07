@@ -1,3 +1,4 @@
+import tensorflow as tf
 def gen_duration(label_path, duration_model):
     # Linguistic features for duration
     hts_labels = hts.load(label_path)
@@ -12,7 +13,7 @@ def gen_duration(label_path, duration_model):
                                        X_min[ty], X_max[ty], feature_range=(0.01, 0.99))
 
     # Apply models
-    duration_model = duration_model.cpu()
+    duration_model = duration_model.gpu()
     duration_model.eval()
 
     #  Apply model

@@ -25,7 +25,7 @@ for ty in ["duration", "acoustic"]:
         train = phase == "train"
         print(train)
         x_dim = duration_linguistic_dim if ty == "duration" else acoustic_linguisic_dim
-        y_dim = duration_dim if ty == "duration" else acoustic_dim
+        y_dim = duration_linguistic_dim if ty == "duration" else acoustic_dim
         X[ty][phase] = FileSourceDataset(BinaryFileSource(join(DATA_ROOT, "X_{}".format(ty)),
                                                            dim = x_dim, train = "train"))
         Y[ty][phase] = FileSourceDataset(BinaryFileSource(join(DATA_ROOT, "Y_{}".format(ty)),

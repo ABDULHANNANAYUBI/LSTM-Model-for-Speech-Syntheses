@@ -1,3 +1,4 @@
+import matplotlib.pyplot as plt
 def vis_utterance(X, Y, lengths, idx):
     """Visualize the following features:
 

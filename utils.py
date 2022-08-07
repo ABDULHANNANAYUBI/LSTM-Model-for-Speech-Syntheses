@@ -1,3 +1,4 @@
+import torch
 num_hidden_layers = 3
 hidden_size = 512
 

@@ -40,3 +40,8 @@ windows = [
     (1, 1, np.array([-0.5, 0.0, 0.5])),
     (1, 1, np.array([1.0, -2.0, 1.0])),
 ]
+
+from acoustic_feature import *
+
+SetDuration()
+
